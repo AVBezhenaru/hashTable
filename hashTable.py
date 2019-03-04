@@ -1,0 +1,81 @@
+class HashTable:
+    def __init__(self, sz, stp):
+        self.size = sz
+        self.step = stp
+        self.slots = [None] * self.size
+
+    def hash_fun(self, value):
+        index = len(value) % self.size
+        return index
+
+    def seek_slot(self, value):
+        index = self.hash_fun(value)
+        length = self.size
+
+        while length > 0 :
+            if self.slots[index] == None:
+                return index
+
+            index += self.step
+
+            if index > self.size - 1:
+                index -= self.size
+                index = abs(index)
+            length -= 1
+
+        return None
+
+    def put(self, value):
+        index = self.seek_slot(value)
+
+        if index != None:
+            self.slots[index] = value
+            return index
+
+        else:
+            return None
+
+    def find(self, value):
+        for i in range(self.size):
+            if self.slots[i] == value:
+                return i
+
+        return None
+
+
+ht = HashTable(17, 3)
+
+print(ht.put("s"))
+print(ht.put("s"))
+print(ht.put("s"))
+print(ht.put("s"))
+print(ht.put("s"))
+print(ht.put("s"))
+print(ht.put("s"))
+print(ht.put("s"))
+print(ht.put("s"))
+print(ht.put("s"))
+print(ht.put("s"))
+print(ht.put("s"))
+print(ht.put("s"))
+print(ht.put("s"))
+print(ht.put("s"))
+print(ht.put("s"))
+# print(ht.put("s"))
+# print(ht.put("s"))
+# print(ht.put("s"))
+# print(ht.put("s"))
+# print(ht.put("s"))
+# print(ht.put("s"))
+# print(ht.put("s"))
+
+
+print(ht.find("s"))
+
+# print("module", abs(10))
+#
+#
+#
+# print(ht.slots[0])
+#
+# # print(ht.seek_slot("ssss"))
