@@ -12,7 +12,7 @@ class HashTable:
         index = self.hash_fun(value)
         length = self.size
 
-        while length > 0 :
+        while length > 0:
             if self.slots[index] == None:
                 return index
 
@@ -20,7 +20,6 @@ class HashTable:
 
             if index > self.size - 1:
                 index -= self.size
-                index = abs(index)
             length -= 1
 
         return None
@@ -41,41 +40,3 @@ class HashTable:
                 return i
 
         return None
-
-
-ht = HashTable(17, 3)
-
-print(ht.put("s"))
-print(ht.put("s"))
-print(ht.put("s"))
-print(ht.put("s"))
-print(ht.put("s"))
-print(ht.put("s"))
-print(ht.put("s"))
-print(ht.put("s"))
-print(ht.put("s"))
-print(ht.put("s"))
-print(ht.put("s"))
-print(ht.put("s"))
-print(ht.put("s"))
-print(ht.put("s"))
-print(ht.put("s"))
-print(ht.put("s"))
-# print(ht.put("s"))
-# print(ht.put("s"))
-# print(ht.put("s"))
-# print(ht.put("s"))
-# print(ht.put("s"))
-# print(ht.put("s"))
-# print(ht.put("s"))
-
-
-print(ht.find("s"))
-
-# print("module", abs(10))
-#
-#
-#
-# print(ht.slots[0])
-#
-# # print(ht.seek_slot("ssss"))
