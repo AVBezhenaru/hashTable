@@ -45,8 +45,3 @@ class HashTable:
                 return i
 
         return None
-
-
-pt = HashTable(4, 3)
-
-print(pt.put("12"))
